@@ -71,7 +71,7 @@ jobs:
             # Frontend
             # =====================
 
-            cd frontend-backend
+            cd frontend/frontend-backend
 
             npm install
 
