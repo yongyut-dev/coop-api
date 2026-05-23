@@ -2,7 +2,7 @@ module.exports = {
 
   apps: [
 
-    // BACKEND API
+    // Backend API
     {
       name: 'backend-coop-api',
       script: './backend/server.js',
@@ -14,9 +14,6 @@ module.exports = {
       }
     },
 
-
-
-    // FRONTEND BACKEND (BFF)
     {
       name: 'frontend-backend',
 

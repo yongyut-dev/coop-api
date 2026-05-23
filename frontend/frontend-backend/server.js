@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 // MEMBER API
-app.get('/api/members/:memid/full',
+app.get('/coop/api/v1/members/:memid/full',
 
     async (req, res) => {
 
@@ -19,7 +19,7 @@ app.get('/api/members/:memid/full',
 
             const response = await axios.get(
 
-                `${process.env.COOP_API_URL}/api/members/${req.params.memid}/full`,
+                `${process.env.COOP_API_URL}/coop/api/v1/members/${req.params.memid}/full`,
 
                 {
                     headers: {

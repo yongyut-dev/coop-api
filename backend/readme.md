@@ -48,12 +48,12 @@ backend/
 ├── .env
 
 api มีการกำหนด rate-limit  15 นาที ให้ req 1000 req
-GET /api/members/038036/full  =รวมทั้งหมดทุก endpoin
+GET /coop/api/v1/members/038036/full  =รวมทั้งหมดทุก endpoin
 แยก Endpoin
-GET /api/members/038036
-GET /api/members/038036/loans
-GET /api/members/038036/savings
-GET /api/members/038036/shr
+GET /coop/api/v1/members-full/038036
+GET /coop/api/v1/members/038036/loans
+GET /coop/api/v1/members/038036/savings
+GET /coop/api/v1/members/038036/shr
 
 โครงสร้างแบบ module-based architecture
 ช่วยให้ระบบสามารถ scale, maintain และแยกความรับผิดชอบของแต่ละ layer ได้ชัดเจน

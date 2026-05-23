@@ -1,5 +1,4 @@
 const memberService = require('../services/member-full.service');  // นำเข้า service เพื่อเรียกใช้ฟังก์ชันต่างๆ   
-
 exports.getMemberFull = async (req, res) => {
     try {
         const id = req.params.id;
