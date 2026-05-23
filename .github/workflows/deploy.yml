@@ -10,28 +10,64 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # =========================
+      # Checkout Source
+      # =========================
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      # =========================
+      # Setup Node.js
+      # =========================
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install dependencies
+      # =========================
+      # Backend
+      # =========================
+      - name: Install Backend Dependencies
+        working-directory: ./backend
         run: npm install
 
-      - name: Run test
+      - name: Test Backend
+        working-directory: ./backend
         run: npm test
 
+      # =========================
+      # Frontend
+      # =========================
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Build Frontend
+        working-directory: ./frontend
+        run: npm run build
+
+      # =========================
+      # Deploy to Server
+      # =========================
       - name: Deploy to Server
         uses: appleboy/ssh-action@v1.0.3
         with:
           script: |
             cd /var/www/html/coop-api
-
             git pull origin main
-
+            # =====================
+            # Backend
+            # =====================
+            cd backend
+            npm install
+        
+            # =====================
+            # Frontend
+            # =====================
+            cd ../frontend
             npm install
 
-            pm2 start ecosystem.config.js
+            npm run build
+            cd ..
+            pm2 reload ecosystem.config.js --env production
+          
