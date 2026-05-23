@@ -33,7 +33,7 @@ jobs:
 
       - name: Test Backend
         working-directory: ./backend
-        run: npm test
+        run: npm run test
 
       # =========================
       # Frontend
