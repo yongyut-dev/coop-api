@@ -30,4 +30,4 @@ echo "===== RESTART PM2 ====="
 
 pm2 restart ecosystem.config.js
 
-echo "===== DEPLOY SUCCESS ====="
+echo "===== DEPLOY สำเร็จ ====="
