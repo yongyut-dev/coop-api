@@ -1,4 +1,4 @@
-name: CI-CD coop-api
+name: CI-CD  coop-api
 
 on:
   push:
