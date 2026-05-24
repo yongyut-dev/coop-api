@@ -8,6 +8,7 @@ const validateApiKey = require('./middlewares/apiKey');
 app.use(cors());
 app.use(express.json());
 
+
 //protect API
 app.use('/api', validateApiKey);
 app.use('/coop/api/v1/members', memberRoute);
