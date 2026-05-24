@@ -46,6 +46,14 @@ backend/
 │
 ├── server.js
 ├── .env
+|
+frontend
+|
+|── frontend-backend
+|    
+|
+ecosystem.config.js
+
 
 api มีการกำหนด rate-limit  15 นาที ให้ req 1000 req
 GET /coop/api/v1/members/038036/full  =รวมทั้งหมดทุก endpoin
