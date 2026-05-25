@@ -44,7 +44,7 @@ app.get('/api/v1/members/:memid/full',
 );
 console.log(process.env.COOP_API_URL);
 
-app.listen(PORT, () => {
+app.listen(4000, () => {
 
     console.log(
         'Frontend Backend running on 4000'
