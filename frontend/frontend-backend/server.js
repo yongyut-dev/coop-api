@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 
 const express = require('express');
 const cors = require('cors');
@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 // MEMBER API
-app.get('/coop/api/v1/members/:memid/full',
+app.get('/api/v1/members/:memid/full',
 
     async (req, res) => {
 
@@ -19,7 +19,7 @@ app.get('/coop/api/v1/members/:memid/full',
 
             const response = await axios.get(
 
-                `${process.env.COOP_API_URL}/coop/api/v1/members/${req.params.memid}/full`,
+                `${process.env.COOP_API_URL}/api/v1/members/${req.params.memid}/full`,
 
                 {
                     headers: {

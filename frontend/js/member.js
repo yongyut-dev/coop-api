@@ -10,7 +10,7 @@ async function searchMember() {
     try {
 
        const response = await fetch(
-             `http://localhost:4000/coop/api/v1/members/${memid}/full`
+             `http://localhost:4000/api/v1/members/${memid}/full`
         );
 
         const result = await response.json();

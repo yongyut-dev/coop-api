@@ -10,8 +10,9 @@ app.use(express.json());
 
 
 //protect API
-app.use('/api', validateApiKey);
-app.use('/coop/api/v1/members', memberRoute);
+//app.use('/api', validateApiKey);
+app.use('/api/v1/members', memberRoute);
+
 const rateLimit = require('express-rate-limit');
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,  // 15 นาที

@@ -1,3 +1,6 @@
+//แก้ครั้งที่ 1
+
+
 module.exports = {
 
   apps: [
@@ -5,10 +8,10 @@ module.exports = {
     // Backend API
     {
       name: 'backend-coop-api',
-      script: './backend/server.js',
-
+      script: 'server.js',
+      cwd: './backend',
+      env_file: './backend/.env',
       watch: true,
-
       env: {
         NODE_ENV: 'development'
       }
@@ -16,11 +19,10 @@ module.exports = {
 
     {
       name: 'frontend-backend',
-
-      script: './frontend/frontend-backend/server.js',
-
+      script: 'server.js',
+      cwd: './frontend/frontend-backend',
+      env_file: './frontend/frontend-backend/.env',
       watch: true,
-
       env: {
         NODE_ENV: 'development'
       }
