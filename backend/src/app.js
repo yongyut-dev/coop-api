@@ -2,14 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const memberRoute = require('./modules/member-full/routes/member-full.route');
 const app = express();
-
 app.set('trust proxy', 1);
 const validateApiKey = require('./middlewares/apiKey');
 app.use(cors());
 app.use(express.json());
 
-
-//protect API
 //app.use('/api', validateApiKey);
 app.use('/api/v1/members', memberRoute);
 

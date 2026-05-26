@@ -1,42 +1,31 @@
+
 async function searchMember() {
-
     const memid = document.getElementById('memid').value;
-
     if (!memid) {
         alert('กรุณากรอกรหัสสมาชิก');
         return;
     }
 
     try {
-
        const response = await fetch(
              `http://localhost:4000/api/v1/members/${memid}/full`
         );
-
         const result = await response.json();
-
         if (result.status !== 'success') {
-
             document.getElementById('result').innerHTML = `
                 <p style="color:red;">
                     ${result.message}
                 </p>
             `;
-
             return;
         }
-
         const data = result.data;
-
         renderMember(data);
-
     } catch (err) {
-
         console.error(err);
-
         document.getElementById('result').innerHTML = `
             <p style="color:red;">
-                Error calling API
+                ข้อผิดพลาดในการเรียก API
             </p>
         `;
     }
@@ -44,10 +33,7 @@ async function searchMember() {
 
 
 function renderMember(data) {
-
     let html = '';
-
-    // MEMBER
     html += `
         <div class="card">
             <h3>ข้อมูลสมาชิก</h3>
